@@ -40,5 +40,7 @@ resource "azurerm_app_service" "example" {
       az login --service-principal --username #{APP_ID}# --password #{SP_PASSWORD}# --tenant #{TENANT_ID}#
       az webapp config access-restriction add --resource-group ${azurerm_resource_group.example.name} --name ${azurerm_app_service.example.name} --rule-name developers --action Allow --ip-address 130.220.0.0/27 --priority 200
     COMMAND
+
+    interpreter = ["PowerShell", "-Command"]
   }
 }
