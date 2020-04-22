@@ -16,5 +16,7 @@ steps:
     sourceFolder: $(Build.SourcesDirectory)/local-exec-az-cli
     targetFolder: $(Build.ArtifactStagingDirectory)
 
+- bash: echo $(Build.BuildNumber)
+
 - task: PublishBuildArtifacts@1
   displayName: 'Publish artifacts'
